@@ -1,0 +1,17 @@
+<!-- cette partie est appelé lorsqu'il sagit d'un flash(msg) càd lors de la redirection-->
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }}">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<!-- cette partie est utilisé lorsque on passe le message dans l'url càd lorsqu'on retourne une page html (render_template('...', error=error)) -->
+{% if error %}
+  <div class="alert alert-danger">{{error}}</div>
+{% endif %}
+
+{% if msg %}
+  <div class="alert alert-success">{{msg}}</div>
+{% endif %}

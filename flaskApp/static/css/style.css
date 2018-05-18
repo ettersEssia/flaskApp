@@ -1,0 +1,6 @@
+.ligne_verticale
+{
+    width:5px;
+    border-left:1px solid gray;
+    height:300px;
+}
